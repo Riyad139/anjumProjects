@@ -14,9 +14,11 @@ public class detailsForm {
     private JPanel MainPanel;
     private JLabel feedBack;
 
-    public detailsForm(){
-        this.submitButton.setFocusable(false);
-       handler();
+    public detailsForm(JFrame frame){
+
+       this.submitButton.setFocusable(false);
+       handler(frame);
+
        this.feedBack.setVisible(false);
     }
 
@@ -24,7 +26,7 @@ public class detailsForm {
        return this.MainPanel;
     }
 
-    private void handler(){
+    private void handler(JFrame frame){
        submitButton.addActionListener(e->{
 
            if(this.name.getText().length() == 0 || this.Id.getText().length() == 0 || this.Dept.getText().length() == 0 || this.Blood.getText().length() == 0 || this.issue.getText().length() == 0
@@ -37,18 +39,12 @@ public class detailsForm {
                return;
            }
 
-           System.out.println(this.name.getText());
-           System.out.println(this.Id.getText());
-           System.out.println(this.Dept.getText());
-           System.out.println(this.Blood.getText());
-           System.out.println(this.issue.getText());
-           System.out.println(this.expire.getText());
-           System.out.println(this.error.getText());
-           System.out.println(this.Mobile.getText());
+
            this.feedBack.setText("Your information has been accepted successfully");
            this.feedBack.setFont(new Font("Inter",Font.PLAIN,16));
            this.feedBack.setForeground(new Color(0x379956));
-
+           new IDCard(this.name.getText(),this.Id.getText(),this.Dept.getText(),this.Mobile.getText(),this.Blood.getText(),this.expire.getText(),this.issue.getText());
+           frame.setVisible(false);
            this.feedBack.setVisible(true);
        });
     }
