@@ -28,6 +28,9 @@ public class Main extends JFrame {
         //////////////////////////////
 
 
+
+
+
         JPanel form = new detailsForm(myFrame).getMainPanel();
         JPanel logInPage = new LogInPage(myFrame,logInFrame).getLoginPanel();
         JPanel welcome = new WelcomePage(logInFrame,welcomeFrame).getWelcomePanel();

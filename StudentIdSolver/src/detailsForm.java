@@ -43,6 +43,8 @@ public class detailsForm {
            this.feedBack.setText("Your information has been accepted successfully");
            this.feedBack.setFont(new Font("Inter",Font.PLAIN,16));
            this.feedBack.setForeground(new Color(0x379956));
+           DataModels dataModels = new DataModels();
+           dataModels.addData(this.name.getText(),this.Id.getText(),this.Dept.getText(),this.Mobile.getText(),this.Blood.getText(),this.expire.getText(),this.issue.getText(),this.error.getText());
            new IDCard(this.name.getText(),this.Id.getText(),this.Dept.getText(),this.Mobile.getText(),this.Blood.getText(),this.expire.getText(),this.issue.getText());
            frame.setVisible(false);
            this.feedBack.setVisible(true);
